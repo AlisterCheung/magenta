@@ -33,6 +33,7 @@ else:
 
 REQUIRED_PACKAGES = [
     'IPython',
+    'absl >= 0.1.12',
     'Pillow >= 3.4.2',
     'backports.tempfile',
     'bokeh >= 0.12.0',
@@ -47,15 +48,15 @@ REQUIRED_PACKAGES = [
     'pretty_midi >= 0.2.6',
     'python-rtmidi',
     'scipy >= 0.18.1',
+    'tensorflow-probability >= 0.5.0',
+    'tensor2tensor >= 1.10.0',
     'wheel',
 ]
 
 if gpu_mode:
-  REQUIRED_PACKAGES.append('tensorflow-gpu >= 1.8.0')
-  REQUIRED_PACKAGES.append('tensorflow-probability-gpu >= 0.3.0')
+  REQUIRED_PACKAGES.append('tensorflow-gpu >= 1.12.0')
 else:
-  REQUIRED_PACKAGES.append('tensorflow >= 1.8.0')
-  REQUIRED_PACKAGES.append('tensorflow-probability >= 0.3.0')
+  REQUIRED_PACKAGES.append('tensorflow >= 1.12.0')
 
 # pylint:disable=line-too-long
 CONSOLE_SCRIPTS = [
@@ -98,6 +99,9 @@ CONSOLE_SCRIPTS = [
     'magenta.models.rl_tuner.rl_tuner_train',
     'magenta.models.sketch_rnn.sketch_rnn_train',
     'magenta.scripts.convert_dir_to_note_sequences',
+    'magenta.tensor2tensor.t2t_datagen',
+    'magenta.tensor2tensor.t2t_decoder',
+    'magenta.tensor2tensor.t2t_trainer',
 ]
 # pylint:enable=line-too-long
 
